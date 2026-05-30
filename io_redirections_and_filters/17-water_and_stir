@@ -1,0 +1,8 @@
+#!/bin/bash
+WATER_VAL=$(echo "$WATER" | tr 'water' '01234')
+STIR_VAL=$(echo "$STIR" | tr 'stir.' '01230')
+SUM=$(echo "obase=8; ibase=5; $WATER_VAL + ibase=4; $STIR_VAL" | bc)
+# Simpler approach:
+W=$(echo "ibase=5; $(echo $WATER | tr 'water' '01234') " | bc)
+S=$(echo "ibase=4; $(echo $STIR | tr 'stir' '0123') " | bc)
+echo "obase=8; $((W + S))" | bc | tr '01234567' 'bestchol'
