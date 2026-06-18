@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+# This script displays lines from ps containing 'bash' to easily isolate its PID
+# shellcheck disable=SC2009
+
+ps -auxf | grep bash
+
