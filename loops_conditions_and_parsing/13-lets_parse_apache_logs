@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# This script parses an apache-access.log file using awk to print only the IP address and status code
+
+awk '{print $1, $9}' apache-access.log
