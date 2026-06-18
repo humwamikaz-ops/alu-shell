@@ -1,22 +1,16 @@
 #!/usr/bin/env bash
-# This script checks the properties of the file named 'school' passed as an argument
+# This script gives information about the 'school' file in the current directory
 
-if [ "$#" -eq 0 ]; then
-    exit 1
-fi
-
-filename=$1
-
-if [ -e "$filename" ]; then
+if [ -e "school" ]; then
     echo "school file exists"
     
-    if [ -s "$filename" ]; then
+    if [ -s "school" ]; then
         echo "school file is not empty"
     else
         echo "school file is empty"
     fi
     
-    if [ -f "$filename" ]; then
+    if [ -f "school" ]; then
         echo "school is a regular file"
     fi
 else
